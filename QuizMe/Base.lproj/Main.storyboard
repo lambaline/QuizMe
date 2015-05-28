@@ -1,25 +1,126 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuizMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who lead us into WWII?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jer-fv-PAD">
+                                <rect key="frame" x="56" y="28" width="488" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1E0-x8-7Fd">
+                                <rect key="frame" x="56" y="57" width="488" height="388"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="388" id="BZU-xy-jrS"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZa-YV-RcU">
+                                <rect key="frame" x="249" y="513" width="103" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="CE4-tS-rVh"/>
+                                    <constraint firstAttribute="width" constant="103" id="xZm-p7-vef"/>
+                                </constraints>
+                                <state key="normal" title="Next question">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="xZm-p7-vef"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="xZm-p7-vef"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="nextQuestionTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="Hzy-Ae-zDn"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u8c-p2-flh">
+                                <rect key="frame" x="36" y="465" width="465" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWl-We-nhf">
+                                <rect key="frame" x="520" y="465" width="44" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="AIr-bh-sh0"/>
+                                </constraints>
+                                <state key="normal" title="Check">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="lDq-fe-vZw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sWl-We-nhf" firstAttribute="leading" secondItem="u8c-p2-flh" secondAttribute="trailing" constant="19" id="1ii-94-ot5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sWl-We-nhf" secondAttribute="trailing" constant="20" id="Bex-XI-7gM"/>
+                            <constraint firstItem="u8c-p2-flh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Hdc-IH-gQ8"/>
+                            <constraint firstItem="Jer-fv-PAD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="INa-Qb-lFL"/>
+                            <constraint firstItem="sWl-We-nhf" firstAttribute="top" secondItem="u8c-p2-flh" secondAttribute="top" id="JWh-63-Fx3"/>
+                            <constraint firstItem="Jer-fv-PAD" firstAttribute="centerX" secondItem="1E0-x8-7Fd" secondAttribute="centerX" id="LBB-L4-VYy"/>
+                            <constraint firstItem="1E0-x8-7Fd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="70" id="LNB-hC-1q1"/>
+                            <constraint firstItem="Jer-fv-PAD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PW7-9N-Xdf"/>
+                            <constraint firstItem="1E0-x8-7Fd" firstAttribute="top" secondItem="Jer-fv-PAD" secondAttribute="bottom" constant="8" symbolic="YES" id="Pjm-zF-3IX"/>
+                            <constraint firstItem="1E0-x8-7Fd" firstAttribute="top" secondItem="Jer-fv-PAD" secondAttribute="bottom" constant="13" id="TOC-dV-K2a"/>
+                            <constraint firstItem="1E0-x8-7Fd" firstAttribute="centerX" secondItem="Jer-fv-PAD" secondAttribute="centerX" id="Xw5-dv-g8H"/>
+                            <constraint firstItem="Jer-fv-PAD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="j6T-BS-D3v"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tZa-YV-RcU" secondAttribute="bottom" constant="57" id="nAV-zD-wM2"/>
+                            <constraint firstItem="Jer-fv-PAD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="ngA-PO-DnU"/>
+                            <constraint firstItem="1E0-x8-7Fd" firstAttribute="centerX" secondItem="tZa-YV-RcU" secondAttribute="centerX" id="nxI-NL-X7u"/>
+                            <constraint firstItem="1E0-x8-7Fd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="r52-2f-LFv"/>
+                            <constraint firstItem="tZa-YV-RcU" firstAttribute="top" secondItem="u8c-p2-flh" secondAttribute="bottom" constant="18" id="tz2-HY-wfk"/>
+                            <constraint firstItem="Jer-fv-PAD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ykH-TO-Zjd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="INa-Qb-lFL"/>
+                                <exclude reference="PW7-9N-Xdf"/>
+                                <exclude reference="LNB-hC-1q1"/>
+                                <exclude reference="TOC-dV-K2a"/>
+                                <exclude reference="Xw5-dv-g8H"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="INa-Qb-lFL"/>
+                                <include reference="PW7-9N-Xdf"/>
+                                <include reference="LNB-hC-1q1"/>
+                                <include reference="TOC-dV-K2a"/>
+                                <include reference="Xw5-dv-g8H"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="answer" destination="u8c-p2-flh" id="APj-D6-hgv"/>
+                        <outlet property="button" destination="tZa-YV-RcU" id="G9z-A1-brN"/>
+                        <outlet property="image" destination="1E0-x8-7Fd" id="5G8-j6-jgn"/>
+                        <outlet property="questionLabel" destination="Jer-fv-PAD" id="F3n-iX-obW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="552" y="475"/>
         </scene>
     </scenes>
 </document>
