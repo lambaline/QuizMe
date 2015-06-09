@@ -81,8 +81,8 @@
 			children = (
 				270E7ACA1B151EAC0085701E /* AppDelegate.swift */,
 				270E7ACC1B151EAC0085701E /* ViewController.swift */,
-				270E7ACE1B151EAC0085701E /* Main.storyboard */,
 				27205DF71B252DAA0077426B /* SecondViewController.swift */,
+				270E7ACE1B151EAC0085701E /* Main.storyboard */,
 				270E7AD11B151EAC0085701E /* Images.xcassets */,
 				270E7AD31B151EAC0085701E /* LaunchScreen.xib */,
 				270E7AC81B151EAC0085701E /* Supporting Files */,

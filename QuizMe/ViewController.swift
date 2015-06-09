@@ -113,7 +113,8 @@ class ViewController: UIViewController, UITextFieldDelegate
         // newAlert.title = "You finished!"
         //Alert.title
         var title = "You finished!"
-        var msg = "You got \(intScore) points of \(questions.count * 3). That's \(intScore/(questions.count*3))%"
+        var percent = (Double(intScore)/Double((questions.endIndex*3)))*100
+        var msg = "You got \(intScore) points of \(questions.endIndex * 3). That's \(percent)%"
     
         //alert.addButtonWithTitle("Done")
     
@@ -125,6 +126,8 @@ class ViewController: UIViewController, UITextFieldDelegate
         let resetAction = UIAlertAction(title: "Reset", style: .Default, handler: { (action: UIAlertAction!) in
             self.index = -1
             self.updateUI()
+            self.intScore = 0
+            self.score.text = "Your score here"
         })
     
         alert.addAction(defaultAction)
@@ -165,7 +168,7 @@ class ViewController: UIViewController, UITextFieldDelegate
             {
                 intScore += 3
             }
-            if(attempts == 1)
+            else if(attempts == 1)
             {
                 intScore += 2
             }
@@ -173,10 +176,18 @@ class ViewController: UIViewController, UITextFieldDelegate
             {
                 intScore += 1
             }
+            score.text = "\(intScore)"
             return true
         }
-        return false
+        else
+        {
+            let alert = UIAlertController(title: "Incorrect", message: "Try again", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+            alert.addAction(action)
+            presentViewController(alert, animated: true, completion: nil)
         }
+        return false
+    }
     
     @IBAction func checkTapped(sender : UIButton)
     {
